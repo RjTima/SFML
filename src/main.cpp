@@ -9,6 +9,7 @@ float currentFrame=0;
 class Player
 {
      public:
+
      float dx,dy;
      FloatRect rect;
      bool onGround;
@@ -19,7 +20,7 @@ class Player
           {
                sprite.setTexture(image);
                rect = FloatRect(84,4,87,94);
-               dx=dy=0;
+               dx=dy=0.1;
                currentFrame=0;
           }
           void update(float time)
@@ -75,15 +76,16 @@ int main()
                }
           if (Keyboard::isKeyPressed(Keyboard::Up))
                {
-                    if (p.onGround) {p.dy=-0.4; p.onGround=false;}
+                    if (p.onGround) {p.dy=-0.35; p.onGround=false;}
                }
           if (Keyboard::isKeyPressed(Keyboard::Space))
                {
-                    if (p.onGround) {p.dy=-0.4; p.onGround=false;}
+                    if (p.onGround) {p.dy=-0.35; p.onGround=false;}
                }     
           if (Keyboard::isKeyPressed(Keyboard::Down))
                {
                }
+          
           p.update(time);
           window.clear();
           window.draw(p.sprite);
